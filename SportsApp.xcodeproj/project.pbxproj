@@ -10,6 +10,8 @@
 		1C53B3382AAE895A00232651 /* LeagueCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C53B3362AAE895A00232651 /* LeagueCollectionCell.swift */; };
 		1C53B3392AAE895A00232651 /* LeagueCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C53B3372AAE895A00232651 /* LeagueCollectionCell.xib */; };
 		1C53B33B2AAE97D600232651 /* Draft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C53B33A2AAE97D600232651 /* Draft.swift */; };
+		1C53B3412AAE99C400232651 /* LiveMatchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C53B33F2AAE99C400232651 /* LiveMatchCollectionViewCell.swift */; };
+		1C53B3422AAE99C400232651 /* LiveMatchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C53B3402AAE99C400232651 /* LiveMatchCollectionViewCell.xib */; };
 		1C8D0F462AAE71220041CEFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8D0F452AAE71220041CEFA /* AppDelegate.swift */; };
 		1C8D0F482AAE71220041CEFA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8D0F472AAE71220041CEFA /* SceneDelegate.swift */; };
 		1C8D0F4A2AAE71220041CEFA /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8D0F492AAE71220041CEFA /* HomeVC.swift */; };
@@ -22,6 +24,8 @@
 		1C53B3362AAE895A00232651 /* LeagueCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueCollectionCell.swift; sourceTree = "<group>"; };
 		1C53B3372AAE895A00232651 /* LeagueCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeagueCollectionCell.xib; sourceTree = "<group>"; };
 		1C53B33A2AAE97D600232651 /* Draft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draft.swift; sourceTree = "<group>"; };
+		1C53B33F2AAE99C400232651 /* LiveMatchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveMatchCollectionViewCell.swift; sourceTree = "<group>"; };
+		1C53B3402AAE99C400232651 /* LiveMatchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveMatchCollectionViewCell.xib; sourceTree = "<group>"; };
 		1C8D0F422AAE71220041CEFA /* SportsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C8D0F452AAE71220041CEFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C8D0F472AAE71220041CEFA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +54,15 @@
 				1C53B3372AAE895A00232651 /* LeagueCollectionCell.xib */,
 			);
 			path = LeagueCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		1C53B33C2AAE997400232651 /* LiveMatchCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1C53B33F2AAE99C400232651 /* LiveMatchCollectionViewCell.swift */,
+				1C53B3402AAE99C400232651 /* LiveMatchCollectionViewCell.xib */,
+			);
+			path = LiveMatchCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		1C8D0F392AAE71220041CEFA = {
@@ -97,6 +110,7 @@
 			children = (
 				1C8D0F492AAE71220041CEFA /* HomeVC.swift */,
 				1C53B3312AAE821500232651 /* LeagueCollectionViewCell */,
+				1C53B33C2AAE997400232651 /* LiveMatchCollectionViewCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -169,6 +183,7 @@
 				1C53B3392AAE895A00232651 /* LeagueCollectionCell.xib in Resources */,
 				1C8D0F522AAE71230041CEFA /* LaunchScreen.storyboard in Resources */,
 				1C8D0F4F2AAE71230041CEFA /* Assets.xcassets in Resources */,
+				1C53B3422AAE99C400232651 /* LiveMatchCollectionViewCell.xib in Resources */,
 				1C8D0F4D2AAE71220041CEFA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,6 +199,7 @@
 				1C8D0F4A2AAE71220041CEFA /* HomeVC.swift in Sources */,
 				1C53B3382AAE895A00232651 /* LeagueCollectionCell.swift in Sources */,
 				1C8D0F462AAE71220041CEFA /* AppDelegate.swift in Sources */,
+				1C53B3412AAE99C400232651 /* LiveMatchCollectionViewCell.swift in Sources */,
 				1C8D0F482AAE71220041CEFA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
