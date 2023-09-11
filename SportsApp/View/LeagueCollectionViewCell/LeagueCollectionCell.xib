@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mycell" id="gTV-IL-0wX" customClass="LeagueCollectionCell" customModule="SportsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="PL" translatesAutoresizingMaskIntoConstraints="NO" id="fzN-x7-uJs">
+                        <rect key="frame" x="10" y="10" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="pE6-ky-iKo"/>
+                            <constraint firstAttribute="width" constant="50" id="w2L-Gp-omP"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" red="0.84705882352941175" green="0.85098039215686272" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="fzN-x7-uJs" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="8Er-09-N9o"/>
+                <constraint firstItem="fzN-x7-uJs" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="LtC-3A-Xua"/>
+                <constraint firstAttribute="bottom" secondItem="fzN-x7-uJs" secondAttribute="bottom" constant="10" id="WzE-jB-suK"/>
+                <constraint firstAttribute="trailing" secondItem="fzN-x7-uJs" secondAttribute="trailing" constant="10" id="dHQ-p4-qyk"/>
+            </constraints>
+            <size key="customSize" width="57" height="50"/>
+            <connections>
+                <outlet property="leagueImageView" destination="fzN-x7-uJs" id="5gG-gC-7D5"/>
+            </connections>
+            <point key="canvasLocation" x="67.938931297709928" y="-38.732394366197184"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="PL" width="3840" height="2160"/>
+    </resources>
+</document>

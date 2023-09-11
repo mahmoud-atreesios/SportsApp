@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="B7d-Wj-Dpl">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="wc1-AF-8P4">
+            <objects>
+                <tabBarController id="B7d-Wj-Dpl" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="w7X-Yp-c0O">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.12941176470588234" green="0.20784313725490194" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="VOQ-fH-YfB" kind="relationship" relationship="viewControllers" id="A6L-dO-YZF"/>
+                        <segue destination="zFa-jI-wTA" kind="relationship" relationship="viewControllers" id="Uz0-7d-0pW"/>
+                        <segue destination="wKQ-8W-7e1" kind="relationship" relationship="viewControllers" id="YxR-08-AnB"/>
+                        <segue destination="kJ3-yB-Ah5" kind="relationship" relationship="viewControllers" id="v7w-Mr-poK"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f2J-Ky-wzz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-219" y="-26"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="x8P-xb-A0H">
+            <objects>
+                <navigationController id="VOQ-fH-YfB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" image="house" catalog="system" id="cNn-M8-aJP"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jhC-1z-x3i">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="o25-M1-YAr" kind="relationship" relationship="rootViewController" id="Lck-Nf-TXj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EVz-fD-4K2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-979" y="730"/>
+        </scene>
+        <!--Sports-->
+        <scene sceneID="1YE-So-dvT">
+            <objects>
+                <viewController storyboardIdentifier="HomeVC" id="o25-M1-YAr" customClass="HomeVC" customModule="SportsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JHh-Us-2eh">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lm8-T9-WcQ">
+                                <rect key="frame" x="16" y="160" width="377" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4za-kh-c0L">
+                                    <size key="itemSize" width="115" height="84"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="SlU-FK-jhb">
+                                        <rect key="frame" x="0.0" y="-7.666666666666667" width="115" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="YFD-Ht-aQH">
+                                            <rect key="frame" x="0.0" y="0.0" width="115" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="115" height="84"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Top League" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDV-vb-6Fb">
+                                <rect key="frame" x="16" y="118" width="128" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RAL-Jv-c2D"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sports" id="dyM-Tf-XlQ">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="list.dash" catalog="system" id="Tm0-Cf-aYx">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="Vg1-SJ-XFk">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="leagueCollectionView" destination="lm8-T9-WcQ" id="8jW-8Z-UfM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ap6-Od-3LS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-979.38931297709917" y="1514.7887323943662"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9ZA-71-QMu">
+            <objects>
+                <navigationController id="zFa-jI-wTA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" image="calendar" catalog="system" id="9kW-1k-XRM"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="v3v-Ue-slE">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="1mo-ES-qaT" kind="relationship" relationship="rootViewController" id="1iK-xi-WDr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QnV-gM-u7r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-219" y="730"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CrJ-Zk-MaN">
+            <objects>
+                <navigationController id="wKQ-8W-7e1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" image="note.text" catalog="system" id="kDP-61-wBn"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jr0-Ie-q9Y">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9lP-Sk-xZd" kind="relationship" relationship="rootViewController" id="XOY-Za-u9D"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VgI-Yn-6NJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="552" y="730"/>
+        </scene>
+        <!--Fixtures-->
+        <scene sceneID="Yfm-HC-Ldo">
+            <objects>
+                <viewController id="1mo-ES-qaT" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uT5-ki-Vky">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="3vq-vw-KpC"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Fixtures" id="Jiz-D8-o8P"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qhy-ft-aa7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-219" y="1515"/>
+        </scene>
+        <!--News-->
+        <scene sceneID="fh6-eA-vCB">
+            <objects>
+                <viewController id="9lP-Sk-xZd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fEM-Ls-t60">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="XsU-xB-tHL"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="News" id="9Dl-sV-Zgs"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lql-4t-3NK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="552" y="1515"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Y2v-iB-xh6">
+            <objects>
+                <navigationController id="kJ3-yB-Ah5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" image="video" catalog="system" id="Onw-fw-R1w"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="A2W-PL-eUD">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Si6-iv-7Hz" kind="relationship" relationship="rootViewController" id="8GL-g8-5Oa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Lp-qT-8PE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1260" y="730"/>
+        </scene>
+        <!--Highlights-->
+        <scene sceneID="Yh6-N6-Epq">
+            <objects>
+                <viewController id="Si6-iv-7Hz" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nXq-iI-mhP">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="pkV-GQ-5zB"/>
+                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Highlights" id="x8i-ub-Mrv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KWV-aF-exo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1259" y="1515"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="calendar" catalog="system" width="128" height="107"/>
+        <image name="house" catalog="system" width="128" height="104"/>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
+        <image name="note.text" catalog="system" width="128" height="107"/>
+        <image name="video" catalog="system" width="128" height="82"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
