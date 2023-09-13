@@ -20,6 +20,8 @@
 		1C8D0F4D2AAE71220041CEFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D0F4B2AAE71220041CEFA /* Main.storyboard */; };
 		1C8D0F4F2AAE71230041CEFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D0F4E2AAE71230041CEFA /* Assets.xcassets */; };
 		1C8D0F522AAE71230041CEFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D0F502AAE71230041CEFA /* LaunchScreen.storyboard */; };
+		1CF1AFBF2AB272920099058D /* UpComingMatchesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1AFBD2AB272920099058D /* UpComingMatchesTableViewCell.swift */; };
+		1CF1AFC02AB272920099058D /* UpComingMatchesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CF1AFBE2AB272920099058D /* UpComingMatchesTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		1C8D0F4E2AAE71230041CEFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C8D0F512AAE71230041CEFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C8D0F532AAE71230041CEFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CF1AFBD2AB272920099058D /* UpComingMatchesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpComingMatchesTableViewCell.swift; sourceTree = "<group>"; };
+		1CF1AFBE2AB272920099058D /* UpComingMatchesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpComingMatchesTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,7 @@
 				1C60F8412AB258C3005B7E3B /* SecondVC.swift */,
 				1C53B3312AAE821500232651 /* LeagueCollectionViewCell */,
 				1C53B33C2AAE997400232651 /* LiveMatchCollectionViewCell */,
+				1CF1AFBC2AB2722A0099058D /* UpComingMatchesTableViewCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -134,6 +139,15 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1CF1AFBC2AB2722A0099058D /* UpComingMatchesTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1CF1AFBD2AB272920099058D /* UpComingMatchesTableViewCell.swift */,
+				1CF1AFBE2AB272920099058D /* UpComingMatchesTableViewCell.xib */,
+			);
+			path = UpComingMatchesTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +210,7 @@
 			files = (
 				1C53B3392AAE895A00232651 /* LeagueCollectionCell.xib in Resources */,
 				1C8D0F522AAE71230041CEFA /* LaunchScreen.storyboard in Resources */,
+				1CF1AFC02AB272920099058D /* UpComingMatchesTableViewCell.xib in Resources */,
 				1C8D0F4F2AAE71230041CEFA /* Assets.xcassets in Resources */,
 				1C53B3422AAE99C400232651 /* LiveMatchCollectionViewCell.xib in Resources */,
 				1C8D0F4D2AAE71220041CEFA /* Main.storyboard in Resources */,
@@ -214,6 +229,7 @@
 				1C53B3382AAE895A00232651 /* LeagueCollectionCell.swift in Sources */,
 				1C72E1962AAF774D00D3C97E /* CollectionViewCell.swift in Sources */,
 				1C8D0F462AAE71220041CEFA /* AppDelegate.swift in Sources */,
+				1CF1AFBF2AB272920099058D /* UpComingMatchesTableViewCell.swift in Sources */,
 				1C53B3412AAE99C400232651 /* LiveMatchCollectionViewCell.swift in Sources */,
 				1C60F8422AB258C3005B7E3B /* SecondVC.swift in Sources */,
 				1C8D0F482AAE71220041CEFA /* SceneDelegate.swift in Sources */,

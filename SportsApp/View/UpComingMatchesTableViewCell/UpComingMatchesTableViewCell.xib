@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="upcomingCell" rowHeight="74" id="KGk-i7-Jjw" customClass="UpComingMatchesTableViewCell" customModule="SportsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="330" height="74"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="330" height="74"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ManUnited" translatesAutoresizingMaskIntoConstraints="NO" id="gnV-9r-nwh">
+                        <rect key="frame" x="213" y="15" width="45" height="45"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="45" id="4QY-sT-0bf"/>
+                            <constraint firstAttribute="width" constant="45" id="L2g-JY-Dvp"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Man City" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMX-30-LqP">
+                        <rect key="frame" x="0.0" y="27" width="70" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="QwS-Ix-cww"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Man United" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3D-il-Ugw">
+                        <rect key="frame" x="260" y="27" width="70" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="Wfn-B4-OOR"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ManCity" translatesAutoresizingMaskIntoConstraints="NO" id="nnm-NI-4oL">
+                        <rect key="frame" x="72" y="15" width="45" height="45"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="45" id="Owz-jo-bNT"/>
+                            <constraint firstAttribute="height" constant="45" id="QQL-tJ-gSe"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Lin-mY-2cu">
+                        <rect key="frame" x="127" y="16.999999999999996" width="76" height="40.666666666666657"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRv-bC-pfT">
+                                <rect key="frame" x="17.333333333333346" y="0.0" width="41.333333333333343" height="22.666666666666668"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.84705882352941175" green="0.85098039215686272" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="08:00 PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRn-0o-NUZ">
+                                <rect key="frame" x="2" y="22.666666666666664" width="72.333333333333329" height="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Y3D-il-Ugw" secondAttribute="trailing" id="20L-eV-Sew"/>
+                    <constraint firstAttribute="bottom" secondItem="Y3D-il-Ugw" secondAttribute="bottom" constant="26" id="3vG-mT-3EJ"/>
+                    <constraint firstItem="Y3D-il-Ugw" firstAttribute="leading" secondItem="gnV-9r-nwh" secondAttribute="trailing" constant="2" id="Fxd-qg-tMK"/>
+                    <constraint firstItem="nnm-NI-4oL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="K6S-je-c2I"/>
+                    <constraint firstItem="gnV-9r-nwh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="KlM-Td-2Zs"/>
+                    <constraint firstItem="nnm-NI-4oL" firstAttribute="leading" secondItem="JMX-30-LqP" secondAttribute="trailing" constant="2" id="Nuc-Qv-dMa"/>
+                    <constraint firstAttribute="bottom" secondItem="Lin-mY-2cu" secondAttribute="bottom" constant="16.329999999999998" id="al8-sF-kBO"/>
+                    <constraint firstItem="Y3D-il-Ugw" firstAttribute="leading" secondItem="gnV-9r-nwh" secondAttribute="trailing" constant="2" id="cX5-ZB-XCW"/>
+                    <constraint firstItem="gnV-9r-nwh" firstAttribute="leading" secondItem="Lin-mY-2cu" secondAttribute="trailing" constant="10" id="ehT-Lg-t3W"/>
+                    <constraint firstItem="JMX-30-LqP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="27" id="faC-ER-ZNO"/>
+                    <constraint firstAttribute="bottom" secondItem="JMX-30-LqP" secondAttribute="bottom" constant="26" id="gpO-dg-qj4"/>
+                    <constraint firstItem="Y3D-il-Ugw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="27" id="i1Z-AG-00H"/>
+                    <constraint firstItem="JMX-30-LqP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="p6L-7u-Kw4"/>
+                    <constraint firstItem="Lin-mY-2cu" firstAttribute="leading" secondItem="nnm-NI-4oL" secondAttribute="trailing" constant="10" id="s8X-Ws-GeR"/>
+                    <constraint firstItem="Lin-mY-2cu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="tqn-Sb-xhV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="151.90839694656489" y="30.281690140845072"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ManCity" width="3500" height="3500"/>
+        <image name="ManUnited" width="1280" height="1297"/>
+    </resources>
+</document>

@@ -7,10 +7,11 @@
 
 import UIKit
 
-class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class HomeVC: UIViewController{
     
     @IBOutlet weak var leagueCollectionView: UICollectionView!
     @IBOutlet weak var LiveMatchCollectionView: UICollectionView!
+    @IBOutlet weak var upComingMatchesTableView: UITableView!
     
     var arr = ["CL","laliga","PL","CL","laliga","PL","CL","laliga","PL","CL","laliga","PL","CL","laliga","PL","CL","laliga","PL","CL","laliga","PL","CL","laliga","PL"]
     
@@ -23,14 +24,17 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         LiveMatchCollectionView.delegate = self
         LiveMatchCollectionView.dataSource = self
         
+        upComingMatchesTableView.delegate = self
+        upComingMatchesTableView.dataSource = self
+        
         leagueCollectionView.register(UINib(nibName: "LeagueCollectionCell", bundle: nil), forCellWithReuseIdentifier: "mycell")
         LiveMatchCollectionView.register(UINib(nibName: "LiveMatchCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "liveMatchCell")
-                
+        upComingMatchesTableView.register(UINib(nibName: "UpComingMatchesTableViewCell", bundle: nil), forCellReuseIdentifier: "upcomingCell")
     }
     
 }
 
-extension HomeVC{
+extension HomeVC:  UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.leagueCollectionView{
             return arr.count
@@ -60,4 +64,44 @@ extension HomeVC{
     }
 }
 
+extension HomeVC: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 4
+    }
+
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return UIView()  // Can be an empty UIView
+    }
+
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
+
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "upcomingCell", for: indexPath) as! UpComingMatchesTableViewCell
+        DispatchQueue.main.async {
+            cell.roundCorners([.topLeft,.topRight,.bottomLeft,.bottomRight], radius: 20)
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
+    
+}
 
