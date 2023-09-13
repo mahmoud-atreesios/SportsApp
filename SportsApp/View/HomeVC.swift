@@ -25,7 +25,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         
         leagueCollectionView.register(UINib(nibName: "LeagueCollectionCell", bundle: nil), forCellWithReuseIdentifier: "mycell")
         LiveMatchCollectionView.register(UINib(nibName: "LiveMatchCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "liveMatchCell")
-        
+                
     }
     
 }
@@ -38,17 +38,7 @@ extension HomeVC{
             return arr.count
         }
     }
-    
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if collectionView == self.LiveMatchCollectionView{
-            let maskPath = UIBezierPath(roundedRect: cell.bounds, byRoundingCorners: [.topRight, .bottomLeft],
-                                        cornerRadii: CGSize(width: 100,height: 100))
-            let shape = CAShapeLayer()
-            shape.path = maskPath.cgPath
-            cell.layer.mask = shape
-        }
-    }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.leagueCollectionView{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mycell", for: indexPath) as! LeagueCollectionCell
@@ -61,6 +51,10 @@ extension HomeVC{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "liveMatchCell", for: indexPath) as! LiveMatchCollectionViewCell
             cell.backgroundImageView.image = UIImage(named: arr[indexPath.row])?.withRenderingMode(.alwaysTemplate)
             cell.backgroundImageView.tintColor = UIColor(red: 158/255, green: 159/255, blue: 165/255, alpha: 1)
+            DispatchQueue.main.async {
+               // cell.straightCutCorners([.topRight,.bottomLeft], cutLength: 50)
+                cell.roundCorners([.bottomLeft,.topRight], radius: 100)
+            }
             return cell
         }
     }
