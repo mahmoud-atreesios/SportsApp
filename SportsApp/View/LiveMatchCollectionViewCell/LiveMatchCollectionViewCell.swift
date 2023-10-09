@@ -10,8 +10,18 @@ import UIKit
 class LiveMatchCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var backgroundImageView: UIImageView!
-    
     @IBOutlet weak var matchTimeLabel: PaddingLabel!
+    
+    @IBOutlet weak var homeTeamLogo: UIImageView!
+    @IBOutlet weak var homeTeamName: UILabel!
+    
+    @IBOutlet weak var awayTeamLogo: UIImageView!
+    @IBOutlet weak var awayTeamName: UILabel!
+    
+    @IBOutlet weak var finalResult: UILabel!
+    @IBOutlet weak var leagueName: UILabel!
+    @IBOutlet weak var roundNumber: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

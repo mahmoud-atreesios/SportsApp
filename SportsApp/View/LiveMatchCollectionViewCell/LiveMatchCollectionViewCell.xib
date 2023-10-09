@@ -45,7 +45,7 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbK-Eo-0uz">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forest" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbK-Eo-0uz">
                         <rect key="frame" x="264" y="168" width="48.333333333333314" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="48.329999999999998" id="1o8-hc-cOo"/>
@@ -113,8 +113,15 @@
             </constraints>
             <size key="customSize" width="404" height="223"/>
             <connections>
+                <outlet property="awayTeamLogo" destination="va6-Ca-ORc" id="P1w-RX-06J"/>
+                <outlet property="awayTeamName" destination="mbK-Eo-0uz" id="rX0-gG-Sax"/>
                 <outlet property="backgroundImageView" destination="xUV-aD-r3x" id="kez-z6-XsL"/>
+                <outlet property="finalResult" destination="ld7-az-Rm8" id="Ep6-kU-6FH"/>
+                <outlet property="homeTeamLogo" destination="Cvq-Rx-3Ib" id="t8U-Sq-PfM"/>
+                <outlet property="homeTeamName" destination="pgc-w0-Vhw" id="cbK-Is-DRO"/>
+                <outlet property="leagueName" destination="X7s-1H-s8f" id="n3O-v8-OP5"/>
                 <outlet property="matchTimeLabel" destination="PgR-ZJ-61f" id="Ecc-O4-VTB"/>
+                <outlet property="roundNumber" destination="PxO-iL-Vrf" id="qY7-pX-aBQ"/>
             </connections>
             <point key="canvasLocation" x="384.73282442748092" y="80.633802816901408"/>
         </collectionViewCell>

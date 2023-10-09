@@ -8,11 +8,18 @@
 import UIKit
 
 class SecondVC: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
     }
 
+    
+    @IBAction func btn(_ sender: UIBarButtonItem) {
+    }
+    
+    @IBAction func btnPressed(_ sender: UIButton) {
+    }
+    
 }
