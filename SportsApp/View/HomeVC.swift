@@ -17,18 +17,26 @@ class HomeVC: UIViewController{
     
     var arr = ["PL","laliga","CL"]
     
+    var dic = ["PL":"152" , "laliga":"302"]
+    
     private let disposeBag = DisposeBag()
     var viewModel = ViewModel()
+    
+    var leagueID: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        viewModel.getAllLeagues()
+        self.viewModel.getLatestFixeturesPL(leagueID: self.dic["PL"]!)
+        
+        //viewModel.getAllLeagues()
         //bindLeagueCollectionToViewModel()
         teststh()
         
-        viewModel.getLatestFixetures()
+        //viewModel.getLatestFixeturesPL()
+        
+        //viewModel.getLatestFixeturesLALIGA()
         bindLiveMatchCollectionToViewModel()
         
         upComingMatchesTableView.delegate = self
@@ -41,35 +49,7 @@ class HomeVC: UIViewController{
     
 }
 
-//extension HomeVC:  UICollectionViewDelegate, UICollectionViewDataSource{
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        if collectionView == self.leagueCollectionView{
-//            return arr.count
-//        }else {
-//            return arr.count
-//        }
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        if collectionView == self.leagueCollectionView{
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mycell", for: indexPath) as! LeagueCollectionCell
-//            cell.layer.cornerRadius = 35.8
-//            cell.clipsToBounds = true
-//            cell.leagueImageView.image = UIImage(named: arr[indexPath.row])?.withRenderingMode(.alwaysTemplate)
-//            cell.leagueImageView.tintColor = UIColor(red: 33/255, green: 53/255, blue: 85/255, alpha: 1)
-//            return cell
-//        }else{
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "liveMatchCell", for: indexPath) as! LiveMatchCollectionViewCell
-//            cell.backgroundImageView.image = UIImage(named: arr[indexPath.row])?.withRenderingMode(.alwaysTemplate)
-//            cell.backgroundImageView.tintColor = UIColor(red: 158/255, green: 159/255, blue: 165/255, alpha: 1)
-//            DispatchQueue.main.async {
-//               // cell.straightCutCorners([.topRight,.bottomLeft], cutLength: 50)
-//                cell.roundCorners([.bottomLeft,.topRight], radius: 100)
-//            }
-//            return cell
-//        }
-//    }
-//}
+
 
 extension HomeVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -115,12 +95,45 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource{
 extension HomeVC{
     
     func teststh(){
+        
+        var selectedCell: LeagueCollectionCell?
+        
         Observable.just(arr)
             .bind(to: leagueCollectionView.rx.items(cellIdentifier: "mycell", cellType: LeagueCollectionCell.self)) { row, image, cell in
                 cell.layer.cornerRadius = 35.8
                 cell.clipsToBounds = true
                 cell.leagueImageView.tintColor = UIColor(red: 33/255, green: 53/255, blue: 85/255, alpha: 1)
                 cell.leagueImageView.image = UIImage(named: image)?.withRenderingMode(.alwaysTemplate)
+                
+                // Handle cell selection
+                let tapGesture = UITapGestureRecognizer()
+                cell.leagueImageView.addGestureRecognizer(tapGesture)
+                cell.leagueImageView.isUserInteractionEnabled = true
+
+                tapGesture.rx.event
+                    .subscribe(onNext: { _ in
+                        // Deselect the previously selected cell
+                        if let selected = selectedCell {
+                            selected.backgroundColor = UIColor(red: 216/255, green: 217/255, blue: 218/255, alpha: 1.0)
+                        }
+
+                        // Update the selected cell and set its background color to yellow
+                        selectedCell = cell
+                        cell.backgroundColor = UIColor(red: 180/255, green: 180/255, blue: 179/255, alpha: 1.0)
+                        // Check if it's the first row
+                        if row == 0 {
+                            // 3aezo lma edos hna eb3at ll api l id bta3 l league w egyb l data w b kda hakon mstakhdm function wa7da w model wa7da bs
+                            print("First row selected!")
+                            self.leagueID = self.dic["PL"]
+                            self.viewModel.getLatestFixeturesPL(leagueID: self.leagueID!)
+
+                        }else {
+                            print("Second row selected!")
+                            self.leagueID = self.dic["laliga"]
+                            self.viewModel.getLatestFixeturesPL(leagueID: self.leagueID!)
+
+                        }
+                    })
             }
             .disposed(by: disposeBag)
     }
@@ -142,9 +155,17 @@ extension HomeVC{
                 }
                 cell.finalResult.text = result.eventFinalResult
                 
-                if let backgroundImage = UIImage(named: "laliga") {
-                    let tintedImage = backgroundImage.withRenderingMode(.alwaysTemplate)
-                    cell.backgroundImageView.image = tintedImage
+                // Check if the league ID matches the selected league
+                if self.leagueID == self.dic["PL"] {
+                    if let backgroundImage = UIImage(named: "PL") {
+                        let tintedImage = backgroundImage.withRenderingMode(.alwaysTemplate)
+                        cell.backgroundImageView.image = tintedImage
+                    }
+                } else if self.leagueID == self.dic["laliga"] {
+                    if let backgroundImage = UIImage(named: "laliga") {
+                        let tintedImage = backgroundImage.withRenderingMode(.alwaysTemplate)
+                        cell.backgroundImageView.image = tintedImage
+                    }
                 }
                 
                 cell.leagueName.text = result.leagueName
@@ -159,5 +180,41 @@ extension HomeVC{
             }
             .disposed(by: disposeBag)
     }
+    
+//    func LALIGA(){
+//        viewModel.LALIGAResult
+//            .bind(to: LiveMatchCollectionView.rx.items(cellIdentifier: "liveMatchCell", cellType: LiveMatchCollectionViewCell.self)) { index, result, cell in
+//
+//                cell.homeTeamLogo.sd_setImage(with: URL(string: result.homeTeamLogo))
+//                if let homeTeamName = result.eventHomeTeam {
+//                    let truncatedHomeTeamName = String(homeTeamName.prefix(3))
+//                    cell.homeTeamName.text = truncatedHomeTeamName
+//                }
+//
+//                cell.awayTeamLogo.sd_setImage(with: URL(string: result.awayTeamLogo))
+//                if let awayTeamName = result.eventAwayTeam {
+//                    let truncatedAwayTeamName = String(awayTeamName.prefix(3))
+//                    cell.awayTeamName.text = truncatedAwayTeamName
+//                }
+//                cell.finalResult.text = result.eventFinalResult
+//
+//                if let backgroundImage = UIImage(named: "laliga") {
+//                    let tintedImage = backgroundImage.withRenderingMode(.alwaysTemplate)
+//                    cell.backgroundImageView.image = tintedImage
+//                }
+//
+//                cell.leagueName.text = result.leagueName
+//                cell.roundNumber.text = result.leagueRound
+//                cell.matchTimeLabel.text = result.eventTime
+//
+//                cell.backgroundImageView.tintColor = UIColor(red: 158/255, green: 159/255, blue: 165/255, alpha: 1)
+//                DispatchQueue.main.async {
+//                    // cell.straightCutCorners([.topRight,.bottomLeft], cutLength: 50)
+//                    cell.roundCorners([.bottomLeft,.topRight], radius: 100)
+//                }
+//            }
+//            .disposed(by: disposeBag)
+//    }
+
 }
 

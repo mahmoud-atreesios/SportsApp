@@ -14,5 +14,4 @@ class LeagueCollectionCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
 }

@@ -15,9 +15,12 @@ class ViewModel{
     
     var leagueDataModel: LeagueModel?
     var latestFixeturesModel: LatestFixeturesModel?
+    var LALIGA: LatestFixeturesModel?
     
     var leagueResult = PublishRelay<[Result]>.init()
     var latestFixeturesResult = PublishRelay<[latestFixetures]>.init()
+    var LALIGAResult = PublishRelay<[latestFixetures]>.init()
+
     
     func getAllLeagues(){
         ApiClient.shared().getData(modelDTO: LeagueModel.self, .getAllLeagues)
@@ -30,12 +33,24 @@ class ViewModel{
             .disposed(by: disposeBag)
     }
     
-    func getLatestFixetures(){
-        ApiClient.shared().getData(modelDTO: LatestFixeturesModel.self, .getLatestFixetures)
-            .subscribe(onNext: { latestFixetures in
+    func getLatestFixeturesPL(leagueID: String){
+        ApiClient.shared().getData(modelDTO: LatestFixeturesModel.self, .getPLFixetures(id: leagueID))
+            .subscribe(onNext: { latestFixeturesPL in
                 //print("Received latestFixetures: \(latestFixetures)")
-                self.latestFixeturesModel = latestFixetures
-                self.latestFixeturesResult.accept(latestFixetures.result)
+                self.latestFixeturesModel = latestFixeturesPL
+                self.latestFixeturesResult.accept(latestFixeturesPL.result)
+            }, onError: { error in
+                print("Error fetching latest fixtures: \(error)")
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    func getLatestFixeturesLALIGA(){
+        ApiClient.shared().getData(modelDTO: LatestFixeturesModel.self, .getLALIGAFixetures)
+            .subscribe(onNext: { latestFixeturesLALIGA in
+                //print("Received latestFixetures: \(latestFixetures)")
+                self.LALIGA = latestFixeturesLALIGA
+                self.LALIGAResult.accept(latestFixeturesLALIGA.result)
             }, onError: { error in
                 print("Error fetching latest fixtures: \(error)")
             })

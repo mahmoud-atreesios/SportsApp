@@ -34,6 +34,7 @@
 		1CF877102AD409BC00427086 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1CF8770F2AD409BC00427086 /* SDWebImageMapKit */; };
 		1CF877122AD42F0700427086 /* LatestFixeturesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF877112AD42F0700427086 /* LatestFixeturesModel.swift */; };
 		1CF877142AD4739700427086 /* Draftt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF877132AD4739700427086 /* Draftt.swift */; };
+		1CF877162AD4908A00427086 /* LatestLaligaFixetures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF877152AD4908A00427086 /* LatestLaligaFixetures.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		1CF8770A2AD4064500427086 /* Khara.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Khara.swift; sourceTree = "<group>"; };
 		1CF877112AD42F0700427086 /* LatestFixeturesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestFixeturesModel.swift; sourceTree = "<group>"; };
 		1CF877132AD4739700427086 /* Draftt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draftt.swift; sourceTree = "<group>"; };
+		1CF877152AD4908A00427086 /* LatestLaligaFixetures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestLaligaFixetures.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				1C2237672ACA3AE7003BE1E4 /* LeagueModel.swift */,
 				1CF877112AD42F0700427086 /* LatestFixeturesModel.swift */,
 				1C2237692ACA3B54003BE1E4 /* ApiManager.swift */,
+				1CF877152AD4908A00427086 /* LatestLaligaFixetures.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				1C2237682ACA3AE7003BE1E4 /* LeagueModel.swift in Sources */,
 				1C53B3382AAE895A00232651 /* LeagueCollectionCell.swift in Sources */,
 				1C72E1962AAF774D00D3C97E /* CollectionViewCell.swift in Sources */,
+				1CF877162AD4908A00427086 /* LatestLaligaFixetures.swift in Sources */,
 				1C8D0F462AAE71220041CEFA /* AppDelegate.swift in Sources */,
 				1C2237772ACA4222003BE1E4 /* ViewModel.swift in Sources */,
 				1C22376A2ACA3B54003BE1E4 /* ApiManager.swift in Sources */,

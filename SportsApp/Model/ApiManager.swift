@@ -16,14 +16,17 @@ protocol fetchData {
 
 enum Endpoints {
     case getAllLeagues
-    case getLatestFixetures
-
+    case getPLFixetures(id: String)
+    case getLALIGAFixetures
+    
     var stringUrl: URL {
         switch self {
         case .getAllLeagues:
             return URL(string: Constants.links.leagueUrl + Constants.links.apikey)!
-        case .getLatestFixetures:
-            return URL(string: Constants.links.latestFixteuresURL + Constants.links.apikey + Constants.links.latestFixetures)!
+        case .getPLFixetures(let id):
+            return URL(string: Constants.links.latestFixteuresURL + Constants.links.apikey + Constants.links.leagueId + "\(id)")!
+        case .getLALIGAFixetures:
+            return URL(string: Constants.links.latestFixteuresURL + Constants.links.apikey + Constants.links.fixeturesLALIGA)!
         }
     }
 }
