@@ -54,3 +54,39 @@ import Foundation
 //        }
 //    }
 //}
+
+
+//    func LALIGA(){
+//        viewModel.LALIGAResult
+//            .bind(to: LiveMatchCollectionView.rx.items(cellIdentifier: "liveMatchCell", cellType: LiveMatchCollectionViewCell.self)) { index, result, cell in
+//
+//                cell.homeTeamLogo.sd_setImage(with: URL(string: result.homeTeamLogo))
+//                if let homeTeamName = result.eventHomeTeam {
+//                    let truncatedHomeTeamName = String(homeTeamName.prefix(3))
+//                    cell.homeTeamName.text = truncatedHomeTeamName
+//                }
+//
+//                cell.awayTeamLogo.sd_setImage(with: URL(string: result.awayTeamLogo))
+//                if let awayTeamName = result.eventAwayTeam {
+//                    let truncatedAwayTeamName = String(awayTeamName.prefix(3))
+//                    cell.awayTeamName.text = truncatedAwayTeamName
+//                }
+//                cell.finalResult.text = result.eventFinalResult
+//
+//                if let backgroundImage = UIImage(named: "laliga") {
+//                    let tintedImage = backgroundImage.withRenderingMode(.alwaysTemplate)
+//                    cell.backgroundImageView.image = tintedImage
+//                }
+//
+//                cell.leagueName.text = result.leagueName
+//                cell.roundNumber.text = result.leagueRound
+//                cell.matchTimeLabel.text = result.eventTime
+//
+//                cell.backgroundImageView.tintColor = UIColor(red: 158/255, green: 159/255, blue: 165/255, alpha: 1)
+//                DispatchQueue.main.async {
+//                    // cell.straightCutCorners([.topRight,.bottomLeft], cutLength: 50)
+//                    cell.roundCorners([.bottomLeft,.topRight], radius: 100)
+//                }
+//            }
+//            .disposed(by: disposeBag)
+//    }

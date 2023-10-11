@@ -63,20 +63,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O32-Sq-duw">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="749"/>
                                         <subviews>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RKU-An-BJ5">
-                                                <rect key="frame" x="10" y="34" width="383" height="70"/>
-                                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="70" id="b6U-lM-5Wa"/>
-                                                </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OcD-OU-qmc">
-                                                    <size key="itemSize" width="115" height="84"/>
-                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                </collectionViewFlowLayout>
-                                                <cells/>
-                                            </collectionView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="hGi-T6-Ytg">
                                                 <rect key="frame" x="10" y="119.00000000000001" width="378" height="33.666666666666671"/>
                                                 <subviews>
@@ -158,28 +144,42 @@
                                                     <constraint firstAttribute="height" constant="289.32999999999998" id="42h-Wv-gnF"/>
                                                 </constraints>
                                             </tableView>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VaP-2d-yJA">
+                                                <rect key="frame" x="10" y="34" width="383" height="70"/>
+                                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="WYR-WN-bVi"/>
+                                                </constraints>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JDT-b6-aCQ">
+                                                    <size key="itemSize" width="128" height="128"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells/>
+                                            </collectionView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TvR-PX-eeh" secondAttribute="trailing" constant="20" symbolic="YES" id="7Xl-oY-F9M"/>
                                             <constraint firstItem="TvR-PX-eeh" firstAttribute="leading" secondItem="O32-Sq-duw" secondAttribute="leading" constant="10" id="8kc-no-QrA"/>
                                             <constraint firstItem="uXN-Qh-Xaq" firstAttribute="top" secondItem="m0D-8y-ejw" secondAttribute="bottom" constant="2" id="ATr-zA-gL4"/>
                                             <constraint firstItem="m0D-8y-ejw" firstAttribute="top" secondItem="geO-Kc-OTJ" secondAttribute="bottom" constant="14" id="BAY-fU-uAm"/>
-                                            <constraint firstAttribute="trailing" secondItem="RKU-An-BJ5" secondAttribute="trailing" id="C97-kR-13Z"/>
+                                            <constraint firstItem="VaP-2d-yJA" firstAttribute="leading" secondItem="O32-Sq-duw" secondAttribute="leading" constant="10" id="CQU-se-0u5"/>
                                             <constraint firstAttribute="bottom" secondItem="uXN-Qh-Xaq" secondAttribute="bottom" constant="29" id="Hr5-L9-223"/>
+                                            <constraint firstAttribute="trailing" secondItem="VaP-2d-yJA" secondAttribute="trailing" id="Jzv-OL-uYI"/>
                                             <constraint firstAttribute="trailing" secondItem="geO-Kc-OTJ" secondAttribute="trailing" id="KM0-jF-hu1"/>
+                                            <constraint firstItem="VaP-2d-yJA" firstAttribute="top" secondItem="TvR-PX-eeh" secondAttribute="bottom" constant="5" id="NmP-Kn-Ynz"/>
                                             <constraint firstItem="hGi-T6-Ytg" firstAttribute="leading" secondItem="O32-Sq-duw" secondAttribute="leading" constant="10" id="OkY-Lg-EA8"/>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TvR-PX-eeh" secondAttribute="trailing" constant="20" symbolic="YES" id="RAb-16-Fhw"/>
-                                            <constraint firstItem="RKU-An-BJ5" firstAttribute="leading" secondItem="O32-Sq-duw" secondAttribute="leading" constant="10" id="ReX-PK-BbE"/>
                                             <constraint firstItem="m0D-8y-ejw" firstAttribute="leading" secondItem="O32-Sq-duw" secondAttribute="leading" constant="10" id="U5D-aR-jPg"/>
                                             <constraint firstAttribute="trailing" secondItem="hGi-T6-Ytg" secondAttribute="trailing" constant="5" id="c2j-rp-QYn"/>
                                             <constraint firstItem="TvR-PX-eeh" firstAttribute="top" secondItem="O32-Sq-duw" secondAttribute="top" constant="5" id="doj-Yb-L5T"/>
-                                            <constraint firstItem="RKU-An-BJ5" firstAttribute="top" secondItem="TvR-PX-eeh" secondAttribute="bottom" constant="5" id="hKb-dd-wpQ"/>
                                             <constraint firstItem="uXN-Qh-Xaq" firstAttribute="leading" secondItem="O32-Sq-duw" secondAttribute="leading" constant="10" id="iAG-uI-Lgb"/>
                                             <constraint firstItem="geO-Kc-OTJ" firstAttribute="leading" secondItem="O32-Sq-duw" secondAttribute="leading" constant="10" id="j0d-Bc-Hxc"/>
                                             <constraint firstItem="geO-Kc-OTJ" firstAttribute="top" secondItem="hGi-T6-Ytg" secondAttribute="bottom" constant="3" id="ltB-Pd-scs"/>
                                             <constraint firstAttribute="trailing" secondItem="uXN-Qh-Xaq" secondAttribute="trailing" constant="10" id="meq-Uq-Pdh"/>
                                             <constraint firstAttribute="trailing" secondItem="m0D-8y-ejw" secondAttribute="trailing" id="pq5-d8-F3q"/>
-                                            <constraint firstItem="hGi-T6-Ytg" firstAttribute="top" secondItem="RKU-An-BJ5" secondAttribute="bottom" constant="15" id="tpD-Op-YEY"/>
+                                            <constraint firstItem="hGi-T6-Ytg" firstAttribute="top" secondItem="VaP-2d-yJA" secondAttribute="bottom" constant="15" id="wAF-ZO-oUq"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -214,7 +214,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="LiveMatchCollectionView" destination="geO-Kc-OTJ" id="uo4-ib-n3t"/>
-                        <outlet property="leagueCollectionView" destination="RKU-An-BJ5" id="9Rr-qN-55N"/>
+                        <outlet property="leagueCollectionView" destination="VaP-2d-yJA" id="R2B-wh-U3G"/>
                         <outlet property="upComingMatchesTableView" destination="uXN-Qh-Xaq" id="tfK-HG-iYf"/>
                     </connections>
                 </viewController>
