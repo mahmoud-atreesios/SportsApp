@@ -16,6 +16,8 @@ struct Constants{
         static let latestFixteuresURL = "https://apiv2.allsportsapi.com/football/?met=Fixtures&APIkey="
         static let leagueId = "&from=2023-10-8&to=2023-10-8&leagueId="
         
+        static let leagueIdd = "&from=2023-10-21&to=2023-10-21&leagueId="
+        
         static let fixeturesLALIGA = "&from=2023-10-8&to=2023-10-8&leagueId=302"
         static let fixeturesPL = "&from=2023-10-8&to=2023-10-8&leagueId=152"
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C0366152AD6D37000850B23 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 1C0366142AD6D37000850B23 /* RxDataSources */; };
 		1C2237682ACA3AE7003BE1E4 /* LeagueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2237672ACA3AE7003BE1E4 /* LeagueModel.swift */; };
 		1C22376A2ACA3B54003BE1E4 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2237692ACA3B54003BE1E4 /* ApiManager.swift */; };
 		1C22376D2ACA3BA7003BE1E4 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 1C22376C2ACA3BA7003BE1E4 /* RxCocoa */; };
@@ -34,7 +35,7 @@
 		1CF877102AD409BC00427086 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1CF8770F2AD409BC00427086 /* SDWebImageMapKit */; };
 		1CF877122AD42F0700427086 /* LatestFixeturesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF877112AD42F0700427086 /* LatestFixeturesModel.swift */; };
 		1CF877142AD4739700427086 /* Draftt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF877132AD4739700427086 /* Draftt.swift */; };
-		1CF877162AD4908A00427086 /* LatestLaligaFixetures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF877152AD4908A00427086 /* LatestLaligaFixetures.swift */; };
+		1CF877182AD6C21F00427086 /* UpcomingFixeturesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF877172AD6C21F00427086 /* UpcomingFixeturesModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,7 +63,7 @@
 		1CF8770A2AD4064500427086 /* Khara.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Khara.swift; sourceTree = "<group>"; };
 		1CF877112AD42F0700427086 /* LatestFixeturesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestFixeturesModel.swift; sourceTree = "<group>"; };
 		1CF877132AD4739700427086 /* Draftt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draftt.swift; sourceTree = "<group>"; };
-		1CF877152AD4908A00427086 /* LatestLaligaFixetures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestLaligaFixetures.swift; sourceTree = "<group>"; };
+		1CF877172AD6C21F00427086 /* UpcomingFixeturesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingFixeturesModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +74,7 @@
 				1C2237712ACA3BA7003BE1E4 /* RxSwift in Frameworks */,
 				1CF877102AD409BC00427086 /* SDWebImageMapKit in Frameworks */,
 				1C22376F2ACA3BA7003BE1E4 /* RxRelay in Frameworks */,
+				1C0366152AD6D37000850B23 /* RxDataSources in Frameworks */,
 				1CF8770E2AD409BC00427086 /* SDWebImage in Frameworks */,
 				1C22376D2ACA3BA7003BE1E4 /* RxCocoa in Frameworks */,
 			);
@@ -170,7 +172,7 @@
 				1C2237672ACA3AE7003BE1E4 /* LeagueModel.swift */,
 				1CF877112AD42F0700427086 /* LatestFixeturesModel.swift */,
 				1C2237692ACA3B54003BE1E4 /* ApiManager.swift */,
-				1CF877152AD4908A00427086 /* LatestLaligaFixetures.swift */,
+				1CF877172AD6C21F00427086 /* UpcomingFixeturesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -206,6 +208,7 @@
 				1C2237702ACA3BA7003BE1E4 /* RxSwift */,
 				1CF8770D2AD409BC00427086 /* SDWebImage */,
 				1CF8770F2AD409BC00427086 /* SDWebImageMapKit */,
+				1C0366142AD6D37000850B23 /* RxDataSources */,
 			);
 			productName = SportsApp;
 			productReference = 1C8D0F422AAE71220041CEFA /* SportsApp.app */;
@@ -238,6 +241,7 @@
 			packageReferences = (
 				1C22376B2ACA3BA6003BE1E4 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				1CF8770C2AD409BC00427086 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				1C0366132AD6D37000850B23 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 			);
 			productRefGroup = 1C8D0F432AAE71220041CEFA /* Products */;
 			projectDirPath = "";
@@ -274,12 +278,12 @@
 				1C2237682ACA3AE7003BE1E4 /* LeagueModel.swift in Sources */,
 				1C53B3382AAE895A00232651 /* LeagueCollectionCell.swift in Sources */,
 				1C72E1962AAF774D00D3C97E /* CollectionViewCell.swift in Sources */,
-				1CF877162AD4908A00427086 /* LatestLaligaFixetures.swift in Sources */,
 				1C8D0F462AAE71220041CEFA /* AppDelegate.swift in Sources */,
 				1C2237772ACA4222003BE1E4 /* ViewModel.swift in Sources */,
 				1C22376A2ACA3B54003BE1E4 /* ApiManager.swift in Sources */,
 				1CF1AFBF2AB272920099058D /* UpComingMatchesTableViewCell.swift in Sources */,
 				1C53B3412AAE99C400232651 /* LiveMatchCollectionViewCell.swift in Sources */,
+				1CF877182AD6C21F00427086 /* UpcomingFixeturesModel.swift in Sources */,
 				1C60F8422AB258C3005B7E3B /* SecondVC.swift in Sources */,
 				1CF8770B2AD4064500427086 /* Khara.swift in Sources */,
 				1CF877142AD4739700427086 /* Draftt.swift in Sources */,
@@ -505,6 +509,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1C0366132AD6D37000850B23 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		1C22376B2ACA3BA6003BE1E4 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
@@ -524,6 +536,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1C0366142AD6D37000850B23 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C0366132AD6D37000850B23 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
+		};
 		1C22376C2ACA3BA7003BE1E4 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1C22376B2ACA3BA6003BE1E4 /* XCRemoteSwiftPackageReference "RxSwift" */;

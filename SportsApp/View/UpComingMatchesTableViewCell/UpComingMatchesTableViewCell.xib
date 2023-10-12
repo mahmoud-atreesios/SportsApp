@@ -86,6 +86,14 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="awayTeamLogo" destination="gnV-9r-nwh" id="bRX-qT-UO5"/>
+                <outlet property="awayTeamName" destination="Y3D-il-Ugw" id="Wya-pc-1Xn"/>
+                <outlet property="homeTeamLogo" destination="nnm-NI-4oL" id="NjV-bC-ipJ"/>
+                <outlet property="homeTeamName" destination="JMX-30-LqP" id="2hz-8V-7v0"/>
+                <outlet property="matchDate" destination="sRv-bC-pfT" id="o8l-70-5Cn"/>
+                <outlet property="matchTime" destination="DRn-0o-NUZ" id="M99-hn-eE4"/>
+            </connections>
             <point key="canvasLocation" x="151.90839694656489" y="30.281690140845072"/>
         </tableViewCell>
     </objects>

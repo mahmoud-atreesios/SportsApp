@@ -54,11 +54,11 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="90+5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PgR-ZJ-61f" customClass="PaddingLabel" customModule="SportsApp" customModuleProvider="target">
-                        <rect key="frame" x="150" y="93" width="70" height="25"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finished" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PgR-ZJ-61f" customClass="PaddingLabel" customModule="SportsApp" customModuleProvider="target">
+                        <rect key="frame" x="140" y="93" width="100" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="Lws-mD-Lyw"/>
-                            <constraint firstAttribute="width" constant="70" id="YHp-ai-zrx"/>
+                            <constraint firstAttribute="width" constant="100" id="YHp-ai-zrx"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                         <color key="textColor" red="0.7803921568627451" green="0.0" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -108,7 +108,7 @@
                 <constraint firstAttribute="trailing" secondItem="va6-Ca-ORc" secondAttribute="trailing" constant="20" id="lnq-IY-ivq"/>
                 <constraint firstItem="Cvq-Rx-3Ib" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="40" id="o4w-h5-SLf"/>
                 <constraint firstAttribute="bottom" secondItem="ld7-az-Rm8" secondAttribute="bottom" constant="63" id="usV-5j-h2g"/>
-                <constraint firstItem="PgR-ZJ-61f" firstAttribute="leading" secondItem="Cvq-Rx-3Ib" secondAttribute="trailing" constant="30" id="wxg-jb-GvD"/>
+                <constraint firstItem="PgR-ZJ-61f" firstAttribute="leading" secondItem="Cvq-Rx-3Ib" secondAttribute="trailing" constant="20" id="wxg-jb-GvD"/>
                 <constraint firstAttribute="trailing" secondItem="mbK-Eo-0uz" secondAttribute="trailing" constant="37.670000000000002" id="yCY-jO-lB4"/>
             </constraints>
             <size key="customSize" width="404" height="223"/>

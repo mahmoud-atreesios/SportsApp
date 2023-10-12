@@ -9,6 +9,16 @@ import UIKit
 
 class UpComingMatchesTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var homeTeamLogo: UIImageView!
+    @IBOutlet weak var homeTeamName: UILabel!
+    
+    @IBOutlet weak var awayTeamLogo: UIImageView!
+    @IBOutlet weak var awayTeamName: UILabel!
+    
+    
+    @IBOutlet weak var matchDate: UILabel!
+    @IBOutlet weak var matchTime: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

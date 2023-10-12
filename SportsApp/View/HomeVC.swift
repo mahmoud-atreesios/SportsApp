@@ -28,23 +28,18 @@ class HomeVC: UIViewController{
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        self.viewModel.getLatestFixeturesPL(leagueID: self.dic["PL"]!)
-        
-        //viewModel.getAllLeagues()
-        //bindLeagueCollectionToViewModel()
-        setupCollectionView()
-        
-        //viewModel.getLatestFixeturesPL()
-        
-        //viewModel.getLatestFixeturesLALIGA()
-        bindLiveMatchCollectionToViewModel()
-        
-        upComingMatchesTableView.delegate = self
-        upComingMatchesTableView.dataSource = self
-        
         leagueCollectionView.register(UINib(nibName: "LeagueCollectionCell", bundle: nil), forCellWithReuseIdentifier: "mycell")
         LiveMatchCollectionView.register(UINib(nibName: "LiveMatchCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "liveMatchCell")
         upComingMatchesTableView.register(UINib(nibName: "UpComingMatchesTableViewCell", bundle: nil), forCellReuseIdentifier: "upcomingCell")
+        
+        setupCollectionView()
+        
+        bindLiveMatchCollectionToViewModel()
+        
+        bindUpcomingTableViewtoViewModel()
+        
+        self.viewModel.getLatestFixetures(leagueID: self.dic["PL"]!)
+        self.viewModel.getUpcomingFixetures(leagueID: self.dic["PL"]!)
     }
     
 }
@@ -68,47 +63,45 @@ extension HomeVC{
                 let tapGesture = UITapGestureRecognizer()
                 cell.leagueImageView.addGestureRecognizer(tapGesture)
                 cell.leagueImageView.isUserInteractionEnabled = true
-
+                
                 tapGesture.rx.event
                     .subscribe(onNext: { _ in
-                        // Deselect the previously selected cell
+
                         if let selected = selectedCell {
                             selected.backgroundColor = UIColor(red: 216/255, green: 217/255, blue: 218/255, alpha: 1.0)
                         }
-
-                        // Update the selected cell and set its background color to yellow
+                        
                         selectedCell = cell
                         cell.backgroundColor = UIColor(red: 180/255, green: 180/255, blue: 179/255, alpha: 1.0)
-                        // Check if it's the first row
+
                         if row == 0 {
                             // 3aezo lma edos hna eb3at ll api l id bta3 l league w egyb l data w b kda hakon mstakhdm function wa7da w model wa7da bs
                             print("First row selected!")
                             self.leagueID = self.dic["PL"]
-                            self.viewModel.getLatestFixeturesPL(leagueID: self.leagueID!)
 
                         }else if row == 1{
                             print("Second row selected!")
                             self.leagueID = self.dic["laliga"]
-                            self.viewModel.getLatestFixeturesPL(leagueID: self.leagueID!)
 
                         }else if row == 2{
                             print("third row selected!")
                             self.leagueID = self.dic["EPL2"]
-                            self.viewModel.getLatestFixeturesPL(leagueID: self.leagueID!)
 
                         }else if row == 3{
                             print("fourth row selected!")
                             self.leagueID = self.dic["BL"]
-                            self.viewModel.getLatestFixeturesPL(leagueID: self.leagueID!)
 
                         }else if row == 5{
                             print("fourth row selected!")
                             self.leagueID = self.dic["SA"]
-                            self.viewModel.getLatestFixeturesPL(leagueID: self.leagueID!)
 
                         }
-
+                        
+                        self.viewModel.clearUpcomingFixtures()
+                        self.viewModel.getLatestFixetures(leagueID: self.leagueID!)
+                        self.viewModel.getUpcomingFixetures(leagueID: self.leagueID!)
                     })
+                    .disposed(by: self.disposeBag)
             }
             .disposed(by: disposeBag)
     }
@@ -157,12 +150,12 @@ extension HomeVC{
                         cell.backgroundImageView.image = tintedImage
                     }
                 }
-
+                
                 cell.leagueName.text = result.leagueName
                 cell.roundNumber.text = result.leagueRound
-                cell.matchTimeLabel.text = result.eventTime
+                cell.matchTimeLabel.text = result.eventStatus
+                cell.backgroundImageView.tintColor = UIColor(red: 180/255, green: 180/255, blue: 179/255, alpha: 1)
                 
-                cell.backgroundImageView.tintColor = UIColor(red: 158/255, green: 159/255, blue: 165/255, alpha: 1)
                 DispatchQueue.main.async {
                     // cell.straightCutCorners([.topRight,.bottomLeft], cutLength: 50)
                     cell.roundCorners([.bottomLeft,.topRight], radius: 100)
@@ -170,47 +163,57 @@ extension HomeVC{
             }
             .disposed(by: disposeBag)
     }
-
+    
 }
 
+extension HomeVC{
+    
+    func bindUpcomingTableViewtoViewModel(){
 
-extension HomeVC: UITableViewDelegate, UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 10
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0
-    }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return UIView()  // Can be an empty UIView
-    }
-    
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return UIView()
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "upcomingCell", for: indexPath) as! UpComingMatchesTableViewCell
-        DispatchQueue.main.async {
-            cell.roundCorners([.topLeft,.topRight,.bottomLeft,.bottomRight], radius: 20)
-        }
-        cell.layer.borderColor = UIColor(ciColor: .white).cgColor
-        cell.layer.borderWidth = 1
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        viewModel.upcomingFixeturesResult
+            .subscribe(onNext: { [weak self] fixtures in
+                guard let self = self else { return }
+
+                if fixtures.isEmpty {
+                    let noMatchesLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.upComingMatchesTableView.bounds.size.width, height: self.upComingMatchesTableView.bounds.size.height))
+                    noMatchesLabel.text = "No matches for today"
+                    noMatchesLabel.textColor = UIColor.gray
+                    noMatchesLabel.textAlignment = .center
+
+                    self.upComingMatchesTableView.backgroundView = noMatchesLabel
+                    self.upComingMatchesTableView.separatorStyle = .none
+                } else {
+                    DispatchQueue.main.async {
+                        self.upComingMatchesTableView.backgroundView = nil
+                        self.upComingMatchesTableView.separatorStyle = .singleLine
+                    }
+                }
+            })
+            .disposed(by: disposeBag)
+
+        viewModel.upcomingFixeturesResult
+            .bind(to: upComingMatchesTableView.rx.items) { tableView, row, element in
+                // Configure your cell using 'element' which represents an upcoming fixture
+                let cell = tableView.dequeueReusableCell(withIdentifier: "upcomingCell", for: IndexPath(row: row, section: 0)) as! UpComingMatchesTableViewCell
+                cell.homeTeamLogo.sd_setImage(with: URL(string: element.homeTeamLogo))
+                cell.homeTeamName.text = element.eventHomeTeam
+
+                cell.awayTeamLogo.sd_setImage(with: URL(string: element.awayTeamLogo))
+                cell.awayTeamName.text = element.eventAwayTeam
+
+                cell.matchDate.text = element.eventDate
+                cell.matchTime.text = element.eventTime
+
+                DispatchQueue.main.async {
+                    cell.roundCorners([.topLeft,.topRight,.bottomLeft,.bottomRight], radius: 20)
+                }
+                cell.layer.borderColor = UIColor(ciColor: .white).cgColor
+                cell.layer.borderWidth = 1
+
+                return cell
+            }
+            .disposed(by: disposeBag)
+
     }
     
 }
