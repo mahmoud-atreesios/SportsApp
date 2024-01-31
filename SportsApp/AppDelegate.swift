@@ -14,6 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Capture the current date and time
+        let currentDate = Date()
+        
+        // Store the current date in UserDefaults or any other appropriate storage mechanism
+        UserDefaults.standard.set(currentDate, forKey: "appLaunchDate")
+        
         return true
     }
 

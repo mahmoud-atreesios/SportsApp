@@ -17,7 +17,8 @@ protocol fetchData {
 enum Endpoints {
     case getAllLeagues
     case getLatestFixetures(id: String)
-    case getUpcomingFixetures(id: String)
+    case getUpcomingFixetures(id: String, from: String, to: String)
+    case iframe(token: String)
     
     var stringUrl: URL {
         switch self {
@@ -25,8 +26,10 @@ enum Endpoints {
             return URL(string: Constants.links.leagueUrl + Constants.links.apikey)!
         case .getLatestFixetures(let id):
             return URL(string: Constants.links.latestFixteuresURL + Constants.links.apikey + Constants.links.leagueId + "\(id)")!
-        case .getUpcomingFixetures(let id):
-            return URL(string: Constants.links.latestFixteuresURL + Constants.links.apikey + Constants.links.leagueIdd + "\(id)")!
+        case .getUpcomingFixetures(let id, let from, let to):
+            return URL(string: Constants.links.latestFixteuresURL + Constants.links.apikey + "&from=\(from)&to=\(to)" + Constants.links.leagueIdd + "\(id)")!
+        case .iframe(let token):
+            return URL(string: Constants.links.iframe + "\(token)")!
         }
     }
 }

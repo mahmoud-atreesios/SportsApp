@@ -90,3 +90,82 @@ import Foundation
 //            }
 //            .disposed(by: disposeBag)
 //    }
+
+
+//    func bindUpcomingTableViewtoViewModel(){
+//
+//        viewModel.upcomingFixeturesResult
+//            .subscribe(onNext: { [weak self] fixtures in
+//                guard let self = self else { return }
+//
+//                if fixtures.isEmpty {
+//
+//                    self.setUpLoader()
+//
+//                    let noMatchesLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.upComingMatchesTableView.bounds.size.width, height: self.upComingMatchesTableView.bounds.size.height))
+//                    noMatchesLabel.text = "No matches for today"
+//                    noMatchesLabel.textColor = UIColor.gray
+//                    noMatchesLabel.textAlignment = .center
+//
+//                    self.upComingMatchesTableView.backgroundView = noMatchesLabel
+//                    self.upComingMatchesTableView.separatorStyle = .none
+//                } else {
+//                    DispatchQueue.main.async {
+//                        self.upComingMatchesTableView.backgroundView = nil
+//                        self.upComingMatchesTableView.separatorStyle = .singleLine
+//                    }
+//                }
+//            })
+//            .disposed(by: disposeBag)
+//
+//        viewModel.upcomingFixeturesResult
+//            .bind(to: upComingMatchesTableView.rx.items) { tableView, row, element in
+//                // Configure your cell using 'element' which represents an upcoming fixture
+//                let cell = tableView.dequeueReusableCell(withIdentifier: "upcomingCell", for: IndexPath(row: row, section: 0)) as! UpComingMatchesTableViewCell
+//                cell.homeTeamLogo.sd_setImage(with: URL(string: element.homeTeamLogo))
+//                cell.homeTeamName.text = element.eventHomeTeam
+//
+//                cell.awayTeamLogo.sd_setImage(with: URL(string: element.awayTeamLogo))
+//                cell.awayTeamName.text = element.eventAwayTeam
+//
+//                cell.matchDate.text = element.eventDate
+//                cell.matchTime.text = element.eventTime
+//
+//                DispatchQueue.main.async {
+//                    cell.roundCorners([.topLeft,.topRight,.bottomLeft,.bottomRight], radius: 20)
+//                }
+//                cell.layer.borderColor = UIColor(ciColor: .white).cgColor
+//                cell.layer.borderWidth = 1
+//
+//                return cell
+//            }
+//            .disposed(by: disposeBag)
+//    }
+
+
+//        // Create a dispatch group
+//        let group = DispatchGroup()
+//
+//        // Enter the dispatch group before starting each task
+//        group.enter()
+//        getFirstToken {
+//            // Leave the dispatch group once the task is complete
+//            group.leave()
+//        }
+//
+//        group.enter()
+//        getOrderId {
+//            group.leave()
+//        }
+//
+//        group.enter()
+//        getPaymentToken {
+//            group.leave()
+//        }
+//
+//        // Notify when all tasks are completed
+//        group.notify(queue: .main) {
+//            // All tasks are completed, you can proceed with further actions here
+//            // This will be executed after all three functions complete their tasks
+//            print("All tasks completed")
+//        }

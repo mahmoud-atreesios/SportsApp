@@ -6,33 +6,17 @@
 
 
 import UIKit
-import RxSwift
-import RxCocoa
-import RxRelay
-import SDWebImage
+import CTPanoramaView
 
-class Khara: UIViewController {
-
-
-    @IBOutlet weak var leagueCollectionView: UICollectionView!
+class Khara: UIViewController{
     
-    private let disposeBag = DisposeBag()
-    var viewModel = ViewModel()
-
+    @IBOutlet weak var panoramaView: CTPanoramaView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        leagueCollectionView.register(UINib(nibName: "LeagueCollectionCell", bundle: nil), forCellWithReuseIdentifier: "mycell")
-        // Do any additional setup after loading the view.
-        viewModel.getAllLeagues()
-        bindLeagueCollectionViewToViewModel()
+        let image = UIImage(named: "spherical.jpg")
+        panoramaView.image = image
+        panoramaView.controlMethod = .both
     }
-
-    func bindLeagueCollectionViewToViewModel(){
-        viewModel.leagueResult
-            .bind (to: leagueCollectionView.rx.items(cellIdentifier: "mycell", cellType: LeagueCollectionCell.self))
-        { int,result,cell  in
-            cell.leagueImageView.sd_setImage(with: URL(string: result.leagueLogo ?? "CL"))
-        }
-    }
-
 }
+
